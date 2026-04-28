@@ -1,6 +1,10 @@
 FROM ubuntu:22.04
 
-RUN apt-get update && apt-get install -y curl bash
+RUN apt-get update && apt-get install -y \
+    curl \
+    bash \
+    zstd \
+    ca-certificates
 
 # Install Ollama
 RUN curl -fsSL https://ollama.com/install.sh | sh
