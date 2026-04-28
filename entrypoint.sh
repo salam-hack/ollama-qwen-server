@@ -1,7 +1,9 @@
-FROM ollama/ollama
+#!/bin/bash
 
-# اختياري: سكريبت تشغيل
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+ollama serve &
 
-ENTRYPOINT ["/entrypoint.sh"]
+sleep 5
+
+ollama pull qwen2.5:7b
+
+wait
